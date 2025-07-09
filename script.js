@@ -171,6 +171,35 @@ if ('IntersectionObserver' in window) {
     });
 }
 
+// Timeline Animation on Scroll - Enhanced for AOS-like behavior
+const timelineItems = document.querySelectorAll('.timeline-item[data-aos="fade-up"]');
+
+const timelineOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const timelineObserver = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('aos-animate');
+            observer.unobserve(entry.target);
+        }
+    });
+}, timelineOptions);
+
+// Apply observer to timeline items
+if ('IntersectionObserver' in window) {
+    timelineItems.forEach(item => {
+        timelineObserver.observe(item);
+    });
+} else {
+    // Fallback - show all items
+    timelineItems.forEach(item => {
+        item.classList.add('aos-animate');
+    });
+}
+
 // Initialize navigation state on load
 document.addEventListener('DOMContentLoaded', () => {
     highlightActiveSection();
