@@ -673,7 +673,13 @@ body {
     .hero-cta {
         flex-direction: column;
         align-items: center;
-        gap: 1.5rem; /* Better spacing on mobile */
+        gap: 0;
+    }
+
+    .hero-cta .btn {
+        display: block;
+        width: 100%;
+        margin: 0.75rem 0;
     }
 
     .profile-img {
