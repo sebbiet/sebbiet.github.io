@@ -1,30 +1,281 @@
-<!doctype html>
-
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-AU">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>A Basic HTML5 Template</title>
-  <meta name="description" content="Sebastian Tiller">
-  <meta name="author" content="SitePoint">
-
-  <meta property="og:title" content="Sebastian Tiller">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.sebastiantiller.com">
-  <meta property="og:description" content="I enjoy tinkering with life and share my learnings whenever there is chance.">
-  <meta property="og:image" content="image.png">
-
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <title>Sebastian Tiller - Technology, Safety & Remote Leadership</title>
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="description" content="Sebastian Tiller - Experienced leader focused on team collaboration, transparency, and building successful technology teams. Specializing in autonomous work cultures and career development.">
+    <meta name="keywords" content="Sebastian Tiller, Technology Leadership, Team Building, Engineering Management, Career Development">
+    <meta name="author" content="Sebastian Tiller">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sebastiantiller.com/">
+    <meta property="og:title" content="Sebastian Tiller - Leadership & Technology Professional">
+    <meta property="og:description" content="Building high-performance teams through trust, transparency, and constructive feedback. Experienced technology leader and mentor.">
+    <meta property="og:image" content="https://sebastiantiller.com/imgs/Seb.png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <meta property="og:image:alt" content="Sebastian Tiller - Technology Leader">
+    <meta property="og:locale" content="en_AU">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sebastiantiller.com/">
+    <meta property="twitter:title" content="Sebastian Tiller - Leadership & Technology Professional">
+    <meta property="twitter:description" content="Building high-performance teams through trust, transparency, and constructive feedback.">
+    <meta property="twitter:image" content="https://sebastiantiller.com/imgs/Seb.png">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://www.linkedin.com">
+    <link rel="preconnect" href="https://x.com">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" as="image" href="imgs/Seb.png">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sebastiantiller.com/">
+    
+    <!-- Emoji Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
+    <link rel="alternate icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sebastian Tiller",
+        "givenName": "Sebastian",
+        "familyName": "Tiller",
+        "alternateName": "Seb Tiller",
+        "description": "Technology leader and General Manager at Octfolio, specialising in enterprise software, team building, and remote leadership.",
+        "url": "https://sebastiantiller.com/",
+        "image": "https://sebastiantiller.com/imgs/Seb.png",
+        "jobTitle": "General Manager",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Octfolio",
+            "description": "Enterprise compliance software for hazardous materials management"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/sebastiantiller",
+            "https://x.com/sebish"
+        ],
+        "knowsAbout": [
+            "Enterprise Software Development",
+            "Team Leadership",
+            "Remote Team Management",
+            "Hazardous Materials Compliance",
+            "Business Strategy",
+            "Software Architecture"
+        ],
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "University (Bachelor of Interactive Entertainment)"
+        },
+        "award": "Innovation Award for Utilities Mobile Solution"
+    }
+    </script>
+    
+    <!-- Website Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Sebastian Tiller - Personal Website",
+        "url": "https://sebastiantiller.com/",
+        "description": "Personal website of Sebastian Tiller - Technology leader, General Manager at Octfolio, and advocate for building enterprise software that doesn't feel like enterprise software.",
+        "author": {
+            "@type": "Person",
+            "name": "Sebastian Tiller"
+        }
+    }
+    </script>
 </head>
-
 <body>
-  <h1>Sebastian Tiller</h1>
-  <script src="js/scripts.js"></script>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="nav-brand">Sebastian Tiller</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main id="main-content">
+    <section id="home" class="hero" role="banner">
+        <div class="container">
+            <div class="hero-content">
+                <img src="imgs/Seb.png" 
+                     alt="Sebastian Tiller - Technology leader and enterprise software innovator" 
+                     class="profile-img" 
+                     loading="lazy" 
+                     width="200" 
+                     height="200">
+                <h1 class="hero-title">Sebastian Tiller</h1>
+                <p class="hero-subtitle">Building enterprise software that doesn't feel like enterprise software.</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>G'day! I'm Seb, and I've spent the last 15 years on a mission to prove that enterprise software doesn't have to feel like... well, enterprise software. You know the type - clunky, confusing, and designed by someone who clearly never has to use it.</p>
+                    <p>My journey started with a Bachelor of Interactive Entertainment in Animation (yes, really!), which probably explains why I'm obsessed with making business software that people actually <em>want</em> to use. After stints in game QA and running a photo centre, I discovered my calling: solving complex business problems with elegant tech solutions.</p>
+                    <p>These days, I'm the General Manager at Octfolio, where we help organisations across Australia and New Zealand manage hazardous materials compliance without wanting to tear their hair out. I've had the privilege of working with everyone from poultry producers (saving them $1M+ annually) to power companies (96% error reduction!), always with the same goal: making their work lives easier.</p>
+                    <p>I'm particularly proud of building remote teams before it was trendy (been doing it since 2016!), creating a partner program that help drive revenue, and most importantly, fostering a culture where my team genuinely enjoys Monday mornings. That last one might be my greatest achievement.</p>
+                    <div class="values">
+                        <h3>What Drives Me</h3>
+                        <ul>
+                            <li><strong>People Over Process:</strong> Great teams build great products, not the other way around</li>
+                            <li><strong>Elegant Solutions:</strong> The best answer is usually the simplest one that actually works</li>
+                            <li><strong>Remote-First:</strong> Talent is everywhere, so why limit yourself to one postcode?</li>
+                            <li><strong>Family Time is Sacred:</strong> I block out 7-9am and 7-8pm for family - no exceptions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">My Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>General Manager</h3>
+                        <h4>Octfolio 2016 - Present</h4>
+                        <p>For the past 9 years, I've been on a mission to make enterprise compliance software actually enjoyable to use. At Octfolio, we're helping many organizations across Australia and New Zealand manage hazardous materials without the usual enterprise software headaches.</p>
+                        <p>What started as a principal consultant role quickly evolved into leading the entire operation.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>The Journey Before</h3>
+                        <h4>Building Enterprise Solutions Since 2009</h4>
+                        <p>My path to "making enterprise software human" started at Theta Technologies, where I spent seven years learning that even the most complex business problems can have elegant solutions. I've worked with everyone from poultry producers to power companies, always with the same goal: making their work lives easier through better technology.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="linkedin-cta">
+                <p>Want to know more about my professional journey, see recommendations from colleagues, or connect?</p>
+                <a href="https://www.linkedin.com/in/sebastiantiller" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View My Full LinkedIn Profile</a>
+                <a href="docs/Sebastian Tiller - Resume - 2022.pdf" class="btn btn-secondary" target="_blank">Download My Resume</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects & Experiments</h2>
+            <p class="projects-intro">Some are serious business solutions, others are weekend experiments. All taught me something valuable about building things people actually want to use.</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Octfolio Platform</h3>
+                    <span class="project-type">Enterprise SaaS</span>
+                    <p>Led the complete rebuild of our compliance management platform. Migrated 5M+ rows of data, reduced infrastructure costs by 72%, and somehow made hazardous materials tracking... dare I say it... enjoyable?</p>
+                    <div class="project-stats">
+                        <span>$1M ARR</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Utilities Mobile Solution</h3>
+                    <span class="project-type">Field Operations</span>
+                    <p>Built a mobile app for field technicians managing 13,000 high-voltage transformers. Reduced errors by 96% and won an innovation award. Turns out, good UX matters even when you're wearing safety gear!</p>
+                    <div class="project-stats">
+                        <span>250+ field users</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>MeetNomics</h3>
+                    <span class="project-type">Meeting Analytics</span>
+                    <p>Ever wondered how much your meetings actually cost? This little tool (it's a joke btw) calculates the real-time cost of meetings based on attendees and their hourly rates. Spoiler: that weekly status update is expensive!</p>
+                    <div class="project-link">
+                        <a href="https://meetnomics.com/" target="_blank" rel="noopener noreferrer">Check it out →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <p>I'm always open to discussing leadership, team building, and technology. Whether you're looking for guidance, collaboration, or just want to connect, feel free to reach out.</p>
+                <div class="contact-cta">
+                    <a href="https://www.linkedin.com/in/sebastiantiller" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+                    <a href="https://x.com/sebish" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Follow me on X</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p>&copy; 1984 Sebastian Tiller. All rights reserved. | Built with passion for great teams.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
