@@ -205,3 +205,157 @@ document.addEventListener('DOMContentLoaded', () => {
     highlightActiveSection();
     handleNavbarScroll();
 });
+
+// Google Analytics Event Tracking
+// Helper function to send GA events
+function sendGAEvent(eventName, parameters = {}) {
+    if (typeof gtag !== 'undefined') {
+        gtag('event', eventName, parameters);
+    }
+}
+
+// Track navigation clicks
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function() {
+        const section = this.getAttribute('href').replace('#', '');
+        sendGAEvent('navigation_click', {
+            'navigation_section': section,
+            'event_category': 'navigation',
+            'event_label': section
+        });
+    });
+});
+
+// Track theme toggle
+themeToggle.addEventListener('click', () => {
+    const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    sendGAEvent('theme_toggle', {
+        'theme_selected': newTheme,
+        'event_category': 'user_preferences',
+        'event_label': newTheme
+    });
+});
+
+// Track mobile menu toggle
+hamburger.addEventListener('click', () => {
+    const isOpening = !navMenu.classList.contains('active');
+    sendGAEvent('mobile_menu_toggle', {
+        'menu_action': isOpening ? 'open' : 'close',
+        'event_category': 'navigation',
+        'event_label': isOpening ? 'menu_opened' : 'menu_closed'
+    });
+});
+
+// Track external links
+document.querySelectorAll('a[target="_blank"]').forEach(link => {
+    link.addEventListener('click', function() {
+        const url = this.getAttribute('href');
+        let linkType = 'external';
+        
+        if (url.includes('linkedin.com')) {
+            linkType = 'linkedin';
+        } else if (url.includes('x.com') || url.includes('twitter.com')) {
+            linkType = 'twitter';
+        } else if (url.includes('.pdf')) {
+            linkType = 'resume_download';
+        } else if (url.includes('octfolio.com')) {
+            linkType = 'octfolio';
+        } else if (url.includes('meetnomics.com')) {
+            linkType = 'meetnomics';
+        }
+        
+        sendGAEvent('external_link_click', {
+            'link_url': url,
+            'link_type': linkType,
+            'event_category': 'outbound',
+            'event_label': linkType
+        });
+    });
+});
+
+// Track CTA button clicks
+document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const buttonText = this.textContent.trim();
+        const buttonClass = this.classList.contains('btn-primary') ? 'primary' : 'secondary';
+        const section = this.closest('section')?.getAttribute('id') || 'unknown';
+        
+        sendGAEvent('cta_click', {
+            'button_text': buttonText,
+            'button_type': buttonClass,
+            'section': section,
+            'event_category': 'engagement',
+            'event_label': `${section}_${buttonText.toLowerCase().replace(/\s+/g, '_')}`
+        });
+    });
+});
+
+// Scroll depth tracking
+let scrollDepthMarks = {
+    25: false,
+    50: false,
+    75: false,
+    90: false,
+    100: false
+};
+
+function trackScrollDepth() {
+    const scrollPercent = Math.round((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100);
+    
+    Object.keys(scrollDepthMarks).forEach(mark => {
+        if (scrollPercent >= parseInt(mark) && !scrollDepthMarks[mark]) {
+            scrollDepthMarks[mark] = true;
+            sendGAEvent('scroll_depth', {
+                'percent_scrolled': mark,
+                'event_category': 'engagement',
+                'event_label': `${mark}_percent`
+            });
+        }
+    });
+}
+
+// Debounced scroll depth tracking
+const debouncedScrollDepth = debounce(trackScrollDepth, 250);
+window.addEventListener('scroll', debouncedScrollDepth, { passive: true });
+
+// Track time on page milestones
+const timeMarks = [30, 60, 120, 300]; // seconds
+let timeMarkIndex = 0;
+
+function trackTimeOnPage() {
+    if (timeMarkIndex < timeMarks.length) {
+        sendGAEvent('time_on_page', {
+            'seconds': timeMarks[timeMarkIndex],
+            'event_category': 'engagement',
+            'event_label': `${timeMarks[timeMarkIndex]}_seconds`
+        });
+        timeMarkIndex++;
+        
+        if (timeMarkIndex < timeMarks.length) {
+            setTimeout(trackTimeOnPage, (timeMarks[timeMarkIndex] - timeMarks[timeMarkIndex - 1]) * 1000);
+        }
+    }
+}
+
+// Start time tracking after 30 seconds
+setTimeout(trackTimeOnPage, 30000);
+
+// Track section visibility
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const sectionId = entry.target.getAttribute('id');
+            sendGAEvent('section_view', {
+                'section_name': sectionId,
+                'event_category': 'engagement',
+                'event_label': sectionId
+            });
+            sectionObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+// Observe all main sections
+document.querySelectorAll('section[id]').forEach(section => {
+    sectionObserver.observe(section);
+});
