@@ -14,3 +14,6 @@ Thumbs.db
 # Editors
 .vscode/
 .idea/
+
+# Personal working notes - not site content, not for a public repo
+writing/how-i-work/QUESTIONNAIRE.md
