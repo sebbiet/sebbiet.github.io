@@ -3,51 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
-    <title>Sebastian Tiller - Technology, Safety & Remote Leadership</title>
-    
+    <title>Sebastian Tiller - Enterprise software that doesn't feel like enterprise software</title>
+
     <!-- Security Headers -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="description" content="Sebastian Tiller - Experienced leader focused on team collaboration, transparency, and building successful technology teams. Specialising in autonomous work cultures and career development.">
+    <meta name="description" content="Building enterprise software that doesn't feel like enterprise software. Sebastian Tiller is General Manager at Octfolio, a technology leader in Australia.">
     <meta name="keywords" content="Sebastian Tiller, Technology Leadership, Team Building, Engineering Management, Career Development">
     <meta name="author" content="Sebastian Tiller">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sebastiantiller.com/">
-    <meta property="og:title" content="Sebastian Tiller - Leadership & Technology Professional">
-    <meta property="og:description" content="Building high-performance teams through trust, transparency, and constructive feedback. Experienced technology leader and mentor.">
-    <meta property="og:image" content="https://sebastiantiller.com/imgs/sebastian-tiller-og-banner.png">
+    <meta property="og:url" content="https://www.sebastiantiller.com/">
+    <meta property="og:title" content="Sebastian Tiller - Building enterprise software that doesn't feel like enterprise software">
+    <meta property="og:description" content="General Manager at Octfolio, specialising in enterprise software, team building, and remote leadership.">
+    <meta property="og:image" content="https://www.sebastiantiller.com/imgs/sebastian-tiller-og-2026.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/png">
-    <meta property="og:image:alt" content="Sebastian Tiller - Use your skills to bring joy">
+    <meta property="og:image:alt" content="Sebastian Tiller, General Manager at Octfolio - Building enterprise software that doesn't feel like enterprise software">
     <meta property="og:locale" content="en_AU">
-    
+
     <!-- X (Twitter) -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://sebastiantiller.com/">
-    <meta property="twitter:title" content="Sebastian Tiller - Leadership & Technology Professional">
-    <meta property="twitter:description" content="Building high-performance teams through trust, transparency, and constructive feedback.">
-    <meta property="twitter:image" content="https://sebastiantiller.com/imgs/sebastian-tiller-og-banner.png">
-    
+    <meta property="twitter:url" content="https://www.sebastiantiller.com/">
+    <meta property="twitter:title" content="Sebastian Tiller - Building enterprise software that doesn't feel like enterprise software">
+    <meta property="twitter:description" content="General Manager at Octfolio, specialising in enterprise software, team building, and remote leadership.">
+    <meta property="twitter:image" content="https://www.sebastiantiller.com/imgs/sebastian-tiller-og-2026.png">
+
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://www.linkedin.com">
     <link rel="preconnect" href="https://x.com">
-    
+
     <!-- Preload critical resources -->
-    <link rel="preload" as="image" href="imgs/Seb.png">
-    <link rel="preload" as="image" href="imgs/sebastian-tiller-og-banner.png">
-    
+    <link rel="preload" as="image" href="imgs/seb-400.webp" type="image/webp">
+    <link rel="preload" as="font" type="font/woff2" href="fonts/space-grotesk-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="fonts/geist-latin.woff2" crossorigin>
+
+    <!-- Colour scheme support -->
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Theme initialisation (inline, before the stylesheet, to avoid a flash of
+         the wrong theme). Also flags that JavaScript is available, so the
+         stylesheet only hides content for scroll reveals when JS can show it
+         again. Without JS the `js` class is never added and everything renders. -->
+    <script>
+      (function () {
+        document.documentElement.classList.add('js');
+        try {
+          var savedTheme = localStorage.getItem('theme');
+          var theme;
+          if (savedTheme === 'dark' || savedTheme === 'light') {
+            theme = savedTheme;
+          } else {
+            theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (error) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+
     <link rel="stylesheet" href="styles.css">
-    
+
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://sebastiantiller.com/">
-    
+    <link rel="canonical" href="https://www.sebastiantiller.com/">
+
     <!-- Emoji Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
-    <link rel="alternate icon" type="image/x-icon" href="favicon.ico">
-    
+
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
     {
@@ -58,8 +83,8 @@
         "familyName": "Tiller",
         "alternateName": "Seb Tiller",
         "description": "Technology leader and General Manager at Octfolio, specialising in enterprise software, team building, and remote leadership.",
-        "url": "https://sebastiantiller.com/",
-        "image": "https://sebastiantiller.com/imgs/Seb.png",
+        "url": "https://www.sebastiantiller.com/",
+        "image": "https://www.sebastiantiller.com/imgs/Seb.png",
         "jobTitle": "General Manager",
         "worksFor": {
             "@type": "Organization",
@@ -85,14 +110,14 @@
         "award": "Innovation Award for Utilities Mobile Solution"
     }
     </script>
-    
+
     <!-- Website Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Sebastian Tiller - Personal Website",
-        "url": "https://sebastiantiller.com/",
+        "url": "https://www.sebastiantiller.com/",
         "description": "Personal website of Sebastian Tiller - Technology leader, General Manager at Octfolio, and advocate for building enterprise software that doesn't feel like enterprise software.",
         "author": {
             "@type": "Person",
@@ -100,7 +125,82 @@
         }
     }
     </script>
-    
+
+    <!-- Projects Structured Data. Creator is asserted only for the projects
+         Seb actually built himself; the Octfolio Platform entry deliberately
+         records the rebuild he led without claiming sole authorship. -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Projects by Sebastian Tiller",
+        "itemListOrder": "https://schema.org/ItemListUnordered",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "Octfolio Platform",
+                    "url": "https://www.octfolio.com.au/",
+                    "applicationCategory": "BusinessApplication",
+                    "description": "Compliance management platform used by councils, schools, utilities and mining companies to manage hazardous materials and risk. Sebastian Tiller led the complete rebuild.",
+                    "publisher": {
+                        "@type": "Organization",
+                        "name": "Octfolio"
+                    }
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "WebSite",
+                    "name": "AsbestosList",
+                    "url": "https://asbestoslist.com/",
+                    "description": "An independent directory of licensed asbestos professionals across Australia and New Zealand, covering surveyors, removal contractors, testing laboratories, consultants, waste disposal, training and equipment.",
+                    "creator": {
+                        "@type": "Person",
+                        "name": "Sebastian Tiller",
+                        "url": "https://www.sebastiantiller.com/"
+                    }
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@type": "WebApplication",
+                    "name": "MeetNomics",
+                    "url": "https://meetnomics.com/",
+                    "applicationCategory": "BusinessApplication",
+                    "description": "A tongue-in-cheek tool that calculates the real-time cost of a meeting from its attendees and their hourly rates.",
+                    "creator": {
+                        "@type": "Person",
+                        "name": "Sebastian Tiller",
+                        "url": "https://www.sebastiantiller.com/"
+                    }
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                    "@type": "WebApplication",
+                    "name": "There Yet?",
+                    "url": "https://thereyetapp.com/",
+                    "description": "A family road trip app that shows kids where they are on the journey, how far they have come, and how much longer until they arrive.",
+                    "creator": {
+                        "@type": "Person",
+                        "name": "Sebastian Tiller",
+                        "url": "https://www.sebastiantiller.com/"
+                    }
+                }
+            }
+        ]
+    }
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3JDFV7PDCG"></script>
     <script>
@@ -114,21 +214,24 @@
 <body>
     <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    
+
     <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
-            <div class="nav-brand">Sebastian Tiller</div>
-            <ul class="nav-menu">
+            <a href="#home" class="nav-brand">Sebastian Tiller</a>
+            <ul class="nav-menu" id="primary-navigation">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#advisory" class="nav-link">Advisory</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
+                <!-- Restore when the Writing section launches:
+                <li><a href="#writing" class="nav-link">Writing</a></li> -->
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-actions">
                 <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                         <circle cx="12" cy="12" r="5"></circle>
                         <line x1="12" y1="1" x2="12" y2="3"></line>
                         <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -139,11 +242,11 @@
                         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
-                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
-                <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -152,160 +255,319 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <main id="main-content">
-    <section id="home" class="hero" role="banner">
-        <div class="container">
-            <div class="hero-content">
-                <img src="imgs/Seb.png" 
-                     alt="Sebastian Tiller - Technology leader and enterprise software innovator" 
-                     class="profile-img" 
-                     loading="lazy" 
-                     width="200" 
-                     height="200">
-                <h1 class="hero-title">Sebastian Tiller</h1>
-                <p class="hero-subtitle">Building enterprise software that doesn't feel like enterprise software.</p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#about" class="btn btn-secondary">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Hero -->
+    <section id="home" class="hero">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>G'day! I'm Seb, and I've spent the last 15 years on a mission to prove that enterprise software doesn't have to feel like... well, enterprise software. You know the type - clunky, confusing, and designed by someone who clearly never has to use it.</p>
-                    <p>My journey started with a Bachelor of Interactive Entertainment in Animation (yes, really!), which probably explains why I'm obsessed with making business software that people actually <em>want</em> to use. After stints in game QA and running a photo centre, I discovered my calling: solving complex business problems with elegant tech solutions.</p>
-                    <p>These days, I'm the General Manager at Octfolio, where we help organisations across Australia and New Zealand manage hazardous materials compliance without wanting to tear their hair out. I've had the privilege of working with everyone from poultry producers (saving them $1M+ annually) to power companies (96% error reduction!), always with the same goal: making their work lives easier.</p>
-                    <p>I'm particularly proud of building remote teams before it was trendy (been doing it since 2016!), creating a partner program that help drive revenue, and most importantly, fostering a culture where my team genuinely enjoys Monday mornings. That last one might be my greatest achievement.</p>
-                    <div class="values">
-                        <h3>What Drives Me</h3>
-                        <ul>
-                            <li><strong>People Over Process:</strong> Great teams build great products, not the other way around</li>
-                            <li><strong>Elegant Solutions:</strong> The best answer is usually the simplest one that actually works</li>
-                            <li><strong>Remote-First:</strong> Talent is everywhere, so why limit yourself to one postcode?</li>
-                            <li><strong>Family Time is Sacred:</strong> No one remembers how late you worked, except your family</li>
-                        </ul>
+            <p class="hero__eyebrow">
+                <span class="hero__name">Sebastian Tiller</span>
+                <span class="hero__role">General Manager, Octfolio</span>
+            </p>
+            <h1 class="hero__title">Building enterprise software that <span class="hero__accent">doesn't feel like</span> enterprise software.</h1>
+            <div class="hero__foot">
+                <div class="hero__pitch">
+                    <p class="hero__lede">Compliance software for councils, utilities, schools and mining companies across Australia and New Zealand. Built remotely since 2016.</p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary">Get in touch</a>
+                        <a href="#advisory" class="btn btn-secondary">How I can help</a>
                     </div>
                 </div>
+                <figure class="hero-portrait">
+                    <picture>
+                        <source srcset="imgs/seb-400.webp" type="image/webp">
+                        <img src="imgs/seb-400.png"
+                             alt="Illustrated portrait of Sebastian Tiller"
+                             class="profile-img"
+                             fetchpriority="high"
+                             width="400"
+                             height="400">
+                    </picture>
+                </figure>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
+    <!-- Proof band. Every figure here also appears in the sections below. -->
+    <section class="proof" aria-label="Results at a glance">
         <div class="container">
-            <h2 class="section-title">My Journey</h2>
-            <div class="timeline">
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-date">2016 - Present</div>
+            <dl class="proof__grid">
+                <div class="proof__item">
+                    <dt class="proof__value">$1M+</dt>
+                    <dd class="proof__label">saved annually for poultry producers</dd>
+                </div>
+                <div class="proof__item">
+                    <dt class="proof__value">96%</dt>
+                    <dd class="proof__label">error reduction for power companies</dd>
+                </div>
+                <div class="proof__item">
+                    <dt class="proof__value">13,000</dt>
+                    <dd class="proof__label">high-voltage transformers, 250+ field users</dd>
+                </div>
+                <div class="proof__item">
+                    <dt class="proof__value"><span class="js-years" data-since="2016">10</span> years</dt>
+                    <dd class="proof__label">leading Octfolio</dd>
+                </div>
+                <div class="proof__item">
+                    <dt class="proof__value">2016</dt>
+                    <dd class="proof__label">running remote teams since</dd>
+                </div>
+            </dl>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section__title">About</h2>
+            <div class="about__grid">
+                <p class="about__lede">G'day! I'm Seb, and I've spent the last <span class="js-years" data-since="2009">17</span> years on a mission to prove that enterprise software doesn't have to feel like... well, enterprise software.</p>
+                <div class="about__body">
+                    <p>You know the type - clunky, confusing, and designed by someone who clearly never has to use it.</p>
+                    <p>My journey started with a Bachelor of Interactive Entertainment in Animation (yes, really!), which probably explains why I'm obsessed with making business software that people actually <em>want</em> to use. After stints in game QA and running a photo centre, I discovered my calling: solving complex business problems with elegant tech solutions.</p>
+                    <p>These days, I'm the General Manager at Octfolio, where we help organisations across Australia and New Zealand manage hazardous materials compliance without wanting to tear their hair out. I've had the privilege of working with everyone from poultry producers (saving them $1M+ annually) to power companies (96% error reduction!), always with the same goal: making their work lives easier.</p>
+                    <p>I'm particularly proud of building remote teams before it was trendy (been doing it since 2016!), creating a partner program that helped drive revenue, and most importantly, fostering a culture where my team genuinely enjoys Monday mornings. That last one might be my greatest achievement.</p>
+                </div>
+            </div>
+
+            <div class="values">
+                <h3 class="values__title">What drives me</h3>
+                <ul class="values__grid">
+                    <li class="value">
+                        <h4 class="value__name">People over process</h4>
+                        <p>Great teams build great products, not the other way around.</p>
+                    </li>
+                    <li class="value">
+                        <h4 class="value__name">Elegant solutions</h4>
+                        <p>The best answer is usually the simplest one that actually works.</p>
+                    </li>
+                    <li class="value">
+                        <h4 class="value__name">Remote-first</h4>
+                        <p>Talent is everywhere, so why limit yourself to one postcode?</p>
+                    </li>
+                    <li class="value">
+                        <h4 class="value__name">Family time is sacred</h4>
+                        <p>No one remembers how late you worked, except your family.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advisory. Copy in this section is drawn from the expertise evidenced
+         elsewhere on the page. It makes no claim about rates or availability. -->
+    <section id="advisory" class="section advisory">
+        <div class="container">
+            <div class="advisory__grid">
+                <div class="advisory__head">
+                    <h2 class="section__title">What I can help with</h2>
+                    <p class="section__lede">Things I have done enough times to have useful opinions about. If one of them sounds like your problem, get in touch.</p>
+                </div>
+                <ul class="advisory__list">
+                    <li class="advisory__item" data-reveal>
+                        <h3 class="advisory__name">Enterprise software people will actually use</h3>
+                        <p>Turning compliance and operations tools from something staff avoid into something they open on purpose.</p>
+                    </li>
+                    <li class="advisory__item" data-reveal>
+                        <h3 class="advisory__name">Leading teams that aren't in the same room</h3>
+                        <p>I have been running remote teams since 2016, well before it was trendy. Hiring, handover, and the habits that keep it working.</p>
+                    </li>
+                    <li class="advisory__item" data-reveal>
+                        <h3 class="advisory__name">Compliance and risk software</h3>
+                        <p>Hazardous materials, risk registers and field operations, for councils, schools, utilities and mining companies.</p>
+                    </li>
+                    <li class="advisory__item" data-reveal>
+                        <h3 class="advisory__name">Building a partner program</h3>
+                        <p>Starting one from scratch and doing the unglamorous work that turns it into revenue.</p>
+                    </li>
+                    <li class="advisory__item" data-reveal>
+                        <h3 class="advisory__name">Engineering management</h3>
+                        <p>Structure, hiring and the boring consistency that makes a team enjoy Monday mornings.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <div class="section__head">
+                <h2 class="section__title">My journey</h2>
+            </div>
+            <ol class="timeline">
+                <li class="timeline-item" data-reveal>
+                    <p class="timeline-date">2016 - Present</p>
                     <div class="timeline-content">
                         <h3>General Manager</h3>
                         <h4>Octfolio</h4>
-                        <p>For the past 9 years, I've been on a mission to make enterprise compliance software actually enjoyable to use. At Octfolio, we're helping many organisations across Australia and New Zealand manage hazardous materials without the usual enterprise software headaches.</p>
+                        <p>For the past <span class="js-years" data-since="2016">10</span> years, I've been on a mission to make enterprise compliance software actually enjoyable to use. At Octfolio, we're helping many organisations across Australia and New Zealand manage hazardous materials without the usual enterprise software headaches.</p>
                         <p>What started as a principal consultant role quickly evolved into leading the entire operation.</p>
                     </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-date">2009 - 2016</div>
+                </li>
+                <li class="timeline-item" data-reveal>
+                    <p class="timeline-date">2009 - 2016</p>
                     <div class="timeline-content">
-                        <h3>Solutions Architect & Consultant</h3>
+                        <h3>Solutions Architect &amp; Consultant</h3>
                         <h4>Theta Technologies</h4>
                         <p>My path to "making enterprise software human" started at Theta Technologies, where I spent seven years learning that even the most complex business problems can have elegant solutions. I've worked with everyone from poultry producers to power companies, always with the same goal: making their work lives easier through better technology.</p>
                     </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-date">2007 - 2009</div>
+                </li>
+                <li class="timeline-item timeline-item--compact" data-reveal>
+                    <p class="timeline-date">2007 - 2009</p>
                     <div class="timeline-content">
-                        <h3>Game Quality Assurance & Web Designer</h3>
+                        <h3>Game Quality Assurance &amp; Web Designer</h3>
                         <h4>Various Studios</h4>
                         <p>Just like Grandma's Boy, but with actual career growth. Between the late nights testing games and the inevitable need for glasses (thanks, Hellboy PSP), I discovered the creative freedom that development offers. This is where coding went from job to passion.</p>
                     </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-date">2005 - 2007</div>
+                </li>
+                <li class="timeline-item timeline-item--compact" data-reveal>
+                    <p class="timeline-date">2005 - 2007</p>
                     <div class="timeline-content">
-                        <h3>Retail & Animation</h3>
-                        <h4>New York & Australia</h4>
+                        <h3>Retail &amp; Animation</h3>
+                        <h4>New York &amp; Australia</h4>
                         <p>Split my time between rigging horror films in New York and working retail back home. When I wasn't animating nightmares or helping customers, I was dreaming of high-end tech and maybe playing a <em>bit</em> too much World of Warcraft.</p>
                     </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-date">2003 - 2004</div>
+                </li>
+                <li class="timeline-item timeline-item--compact" data-reveal>
+                    <p class="timeline-date">2003 - 2004</p>
                     <div class="timeline-content">
                         <h3>University</h3>
                         <h4>Bachelor of Interactive Entertainment</h4>
                         <p>Majoring in Animation and Special Effects. Where I learned that making things move on screen was just the beginning of what technology could do.</p>
                     </div>
-                </div>
-            </div>
-            <div class="linkedin-cta">
-                <p>Want to know more about my professional journey, see recommendations from colleagues, or connect?</p>
-                <a href="https://www.linkedin.com/in/sebastiantiller" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View My LinkedIn Profile</a>
-                <a href="docs/Sebastian Tiller - Resume - 2022.pdf" class="btn btn-secondary" target="_blank">Download My Resume</a>
-            </div>
+                </li>
+            </ol>
+            <p class="timeline-note">
+                <span>Want the recommendations, the full history, or just to connect?</span>
+                <a href="https://www.linkedin.com/in/sebastiantiller" class="link-out" target="_blank" rel="noopener noreferrer">View my LinkedIn profile</a>
+            </p>
         </div>
     </section>
 
-
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <!-- Projects -->
+    <section id="projects" class="section projects">
         <div class="container">
-            <h2 class="section-title">Projects & Experiments</h2>
-            <p class="projects-intro">Some are serious business solutions, others are weekend experiments. All taught me something valuable about building things people actually want to use.</p>
-            <div class="projects-grid">
-                <div class="project-card">
+            <div class="section__head">
+                <h2 class="section__title">Projects &amp; experiments</h2>
+                <p class="section__lede">Some are serious business solutions, others are weekend experiments. All taught me something valuable about building things people actually want to use.</p>
+            </div>
+
+            <div class="projects__featured">
+                <article class="project-card project-card--lead" data-reveal>
+                    <p class="project-type">Enterprise SaaS</p>
                     <h3>Octfolio Platform</h3>
-                    <span class="project-type">Enterprise SaaS</span>
                     <p>Led the complete rebuild of our compliance management platform used by councils, schools, utilities, and mining companies to manage risk and somehow made hazardous materials tracking... dare I say it... enjoyable?</p>
-                    <div class="project-link">
-                        <a href="https://www.octfolio.com.au/" target="_blank" rel="noopener noreferrer">Check it out →</a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
+                    <p class="project-card__link">
+                        <a href="https://www.octfolio.com.au/" class="link-out" target="_blank" rel="noopener noreferrer">octfolio.com.au</a>
+                    </p>
+                </article>
+
+                <article class="project-card project-card--support" data-reveal>
+                    <p class="project-type">Field operations</p>
                     <h3>Utilities Mobile Solution</h3>
-                    <span class="project-type">Field Operations</span>
                     <p>Built a mobile app for field technicians managing 13,000 high-voltage transformers. Reduced errors by 96% and won an innovation award. Turns out, good UX matters even when you're wearing safety gear!</p>
-                    <div class="project-stats">
-                        <span>250+ field users</span>
-                    </div>
-                </div>
+                    <ul class="project-stats">
+                        <li>250+ field users</li>
+                    </ul>
+                </article>
+            </div>
 
-                <div class="project-card">
-                    <h3>MeetNomics</h3>
-                    <span class="project-type">Meeting Analytics</span>
-                    <p>Ever wondered how much your meetings actually cost? This little tool (it's a joke btw) calculates the real-time cost of meetings based on attendees and their hourly rates. Spoiler: that weekly status update is expensive!</p>
-                    <div class="project-link">
-                        <a href="https://meetnomics.com/" target="_blank" rel="noopener noreferrer">Check it out →</a>
-                    </div>
+            <article class="project-card project-card--wide" data-reveal>
+                <div class="project-card__aside">
+                    <p class="project-type">Independent directory</p>
+                    <h3>AsbestosList</h3>
+                    <ul class="project-stats project-stats--stack">
+                        <li>1,694 licensed businesses</li>
+                        <li>10 categories</li>
+                        <li>21 regions across AU and NZ</li>
+                    </ul>
                 </div>
+                <div class="project-card__main">
+                    <p>A searchable directory of licensed asbestos professionals across Australia and New Zealand: surveyors, removal contractors, testing labs, consultants, waste disposal, training and equipment. I built it and I run it, under the grand title of Listing Manager.</p>
+                    <p>The association directories had gone stale and everything else was buried under ads. That's fine if you already work in the industry. It's hopeless if you're a homeowner who has just pulled up a tile, a landlord who has spotted something in a roof cavity, or a project manager who has inherited a site.</p>
+                    <p class="project-note">Worth saying out loud: I work in this industry. One of the directory's categories is asbestos management software, which is what Octfolio sells. Competitors are listed too, which is rather the point of calling it independent.</p>
+                    <p class="project-card__link">
+                        <a href="https://asbestoslist.com/" class="link-out" target="_blank" rel="noopener noreferrer">asbestoslist.com</a>
+                    </p>
+                </div>
+            </article>
 
-                <div class="project-card">
-                    <h3>There Yet?</h3>
-                    <span class="project-type">Family Road Trip App</span>
-                    <p>A simple app born from countless "Are we there yet?" questions on family road trips. Shows kids exactly where we are on the journey, how far we've come, and (most importantly) how much longer until we arrive. Because sometimes Dad doesn't know either!</p>
-                    <div class="project-link">
-                        <a href="https://thereyetapp.com/" target="_blank" rel="noopener noreferrer">Check it out →</a>
-                    </div>
+            <div class="projects__experiments">
+                <h3 class="projects__subhead">Experiments</h3>
+                <div class="experiment-grid">
+                    <article class="project-card project-card--experiment" data-reveal>
+                        <p class="project-type">Meeting analytics</p>
+                        <h3>MeetNomics</h3>
+                        <p>Ever wondered how much your meetings actually cost? This little tool (it's a joke btw) calculates the real-time cost of meetings based on attendees and their hourly rates. Spoiler: that weekly status update is expensive!</p>
+                        <p class="project-card__link">
+                            <a href="https://meetnomics.com/" class="link-out" target="_blank" rel="noopener noreferrer">meetnomics.com</a>
+                        </p>
+                    </article>
+
+                    <article class="project-card project-card--experiment" data-reveal>
+                        <p class="project-type">Family road trip app</p>
+                        <h3>There Yet?</h3>
+                        <p>A simple app born from countless "Are we there yet?" questions on family road trips. Shows kids exactly where we are on the journey, how far we've come, and (most importantly) how much longer until we arrive. Because sometimes Dad doesn't know either!</p>
+                        <p class="project-card__link">
+                            <a href="https://thereyetapp.com/" class="link-out" target="_blank" rel="noopener noreferrer">thereyetapp.com</a>
+                        </p>
+                    </article>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ==================================================================
+         WRITING SECTION - HIDDEN, NOT YET LAUNCHED
+         ==================================================================
+         Built and working, but held back until the "How I work" article is
+         finished. The pages still exist at /writing/ and /writing/how-i-work/
+         and are excluded from the sitemap, noindex'd, and disallowed in
+         robots.txt.
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+         TO LAUNCH: uncomment this section, restore the "Writing" nav link
+         (see the commented <li> in .nav-menu above), re-add both URLs to
+         sitemap.xml, remove the robots noindex tags from the two writing
+         pages, drop the Disallow from robots.txt, and delete the DRAFT
+         banner and "Still to write" section from the article.
+
+         Layout family 7, the editorial measure: one stacked entry at reading
+         width rather than a card grid, so a single post reads as deliberate.
+         ==================================================================
+    <section id="writing" class="section writing">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <p>I'm always open to discussing leadership, team building, and technology. Whether you're looking for guidance, collaboration, or just want to connect, feel free to reach out.</p>
+            <div class="section__head">
+                <h2 class="section__title">Writing</h2>
+                <p class="section__lede">Occasional notes on enterprise software, remote teams, and the unglamorous habits that keep both of them working.</p>
+            </div>
+
+            <div class="post-column">
+                <ol class="post-list">
+                    <li class="post" data-reveal>
+                        <p class="post__meta">
+                            <span>Draft</span>
+                            <span>August 2026</span>
+                            <span>5 min read</span>
+                        </p>
+                        <h3 class="post__title"><a href="writing/how-i-work/">How I work</a></h3>
+                        <p class="post__standfirst">A README for working with me: what I will back you on, what I will push back on, and the four things I care about enough to be repetitive about.</p>
+                        <p><a href="writing/how-i-work/" class="link-out">Read it</a></p>
+                    </li>
+                </ol>
+
+                <p class="post-note">One piece so far, and it is still a draft. <a href="writing/">Everything I have written</a> lives in one place, which is currently a short walk.</p>
+            </div>
+        </div>
+    </section>
+    ================= END HIDDEN WRITING SECTION ================= -->
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="contact__inner">
+                <h2 class="section__title">Get in touch</h2>
+                <p class="contact__text">I'm always open to discussing leadership, team building, and technology. Whether you're looking for guidance, collaboration, or just want to connect, feel free to reach out.</p>
                 <div class="contact-cta">
                     <a href="https://www.linkedin.com/in/sebastiantiller" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
                     <a href="https://x.com/sebish" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Follow me on X</a>
@@ -315,11 +577,11 @@
     </section>
 
     </main>
-    
+
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
         <div class="container">
-            <p>&copy; 1984 Sebastian Tiller. All rights reserved. | Built with passion for great teams.</p>
+            <p>&copy; <abbr title="Yes, 1984. It's a birth year, not a typo.">1984</abbr> Sebastian Tiller. All rights reserved. | Built with passion for great teams.</p>
             <p class="disclaimer">Opinions expressed are my own and do not reflect the views of my employer.</p>
         </div>
     </footer>

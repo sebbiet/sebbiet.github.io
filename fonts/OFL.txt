@@ -1,0 +1,21 @@
+Fonts in this directory are self-hosted because the site's Content Security
+Policy sets `font-src 'self'` - a CDN or Google Fonts <link> would be blocked.
+
+Space Grotesk
+  Copyright (c) 2020 Florian Karsten
+  Licensed under the SIL Open Font License, Version 1.1
+  https://github.com/floriankarsten/space-grotesk
+  https://openfontlicense.org/
+
+Geist
+  Copyright (c) 2023 Vercel, Inc.
+  Licensed under the SIL Open Font License, Version 1.1
+  https://github.com/vercel/geist-font
+  https://openfontlicense.org/
+
+Both files are the variable (300-700) latin and latin-ext subsets as served by
+Google Fonts. To refresh them, re-download the woff2 URLs from
+https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700 and
+https://fonts.googleapis.com/css2?family=Geist:wght@300..700 with a modern
+browser user-agent, and keep the unicode-range declarations in styles.css in
+sync.

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<title>OG image template</title>
+<!--
+  Open Graph image template - 1200x630.
+
+  This is a build tool, not a page of the site. It exists so the social share
+  image can be regenerated from the site's own tokens rather than redrawn by
+  hand in a design app, which is how these drift out of sync.
+
+  TO REGENERATE:
+    1. Serve the repo root (python3 -m http.server 8000)
+    2. Open http://localhost:8000/tools/og-image.html
+    3. Screenshot the .og element at exactly 1200x630
+    4. Save to imgs/sebastian-tiller-og-2026.png
+    5. Bump the filename if the design changes - social platforms cache
+       aggressively by URL, so reusing a filename serves the stale image.
+
+  Colours and fonts are copied from the :root block in styles.css. If you
+  change the palette there, change it here too.
+-->
+<style>
+  @font-face {
+    font-family: 'Space Grotesk';
+    src: url('../fonts/space-grotesk-latin.woff2') format('woff2');
+    font-weight: 300 700; font-display: block;
+  }
+  @font-face {
+    font-family: 'Geist';
+    src: url('../fonts/geist-latin.woff2') format('woff2');
+    font-weight: 300 700; font-display: block;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #555; display: flex; align-items: flex-start; justify-content: flex-start; }
+
+  .og {
+    width: 1200px; height: 630px;
+    background: #F8F5EC;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 86px;
+    font-family: 'Geist', sans-serif;
+  }
+
+  /* Hairline rule system, echoing the site's use of rules over boxes. */
+  .og::before {
+    content: ''; position: absolute; left: 0; right: 0; top: 0;
+    height: 10px; background: #233775;
+  }
+
+  .og__eyebrow {
+    display: flex; align-items: baseline; gap: 18px;
+    margin-bottom: 30px;
+  }
+  .og__name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 21px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: #233775;
+  }
+  .og__role { font-size: 21px; color: #4E5A70; }
+
+  .og__title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500; font-size: 66px; line-height: 1.1;
+    letter-spacing: -0.02em; color: #17202F;
+    max-width: 15.5em;
+  }
+  .og__title em { font-style: normal; color: #45649C; }
+
+  .og__rule { height: 1px; background: rgba(35,55,117,0.24); margin: 38px 0 26px; width: 190px; }
+
+  .og__foot { font-size: 23px; color: #4E5A70; letter-spacing: 0.005em; }
+
+  /* Portrait plate, mirroring the hero's offset-block treatment. */
+  .og__plate {
+    position: absolute; right: 86px; bottom: 78px;
+    width: 232px; height: 232px;
+    background: #FFFFFF; border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(23,32,47,0.07), 0 12px 28px rgba(35,55,117,0.09);
+    display: flex; align-items: flex-end; justify-content: center;
+    overflow: hidden;
+  }
+  .og__plate img { width: 208px; height: 208px; object-fit: contain; }
+  .og__accent {
+    position: absolute; right: 62px; bottom: 54px;
+    width: 232px; height: 232px; border-radius: 10px;
+    background: #667DA6; opacity: 0.22;
+  }
+  .og__domain {
+    position: absolute; right: 86px; top: 62px;
+    font-size: 19px; color: #45649C; letter-spacing: 0.04em;
+  }
+</style>
+</head>
+<body>
+  <div class="og">
+    <div class="og__accent"></div>
+    <div class="og__plate"><img src="../imgs/seb-400.webp" alt=""></div>
+    <div class="og__domain">sebastiantiller.com</div>
+
+    <div class="og__eyebrow">
+      <span class="og__name">Sebastian Tiller</span>
+      <span class="og__role">General Manager, Octfolio</span>
+    </div>
+
+    <h1 class="og__title">Building enterprise software that <em>doesn't feel like</em> enterprise software.</h1>
+
+    <div class="og__rule"></div>
+    <p class="og__foot">Compliance software for councils, utilities, schools and mining.</p>
+  </div>
+</body>
+</html>

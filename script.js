@@ -18,31 +18,28 @@ const SECTION_OFFSET = 100;
 const DEBOUNCE_WAIT = 20;
 
 // Dark Mode Toggle
+// Theme is initialised by the inline script in <head> (avoids a flash of
+// the wrong theme). Just read whatever it already set on <html> here.
 const themeToggle = document.querySelector('.theme-toggle');
 const html = document.documentElement;
-
-// Check for saved theme preference or default to light
-let currentTheme = 'light';
-try {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark' || savedTheme === 'light') {
-        currentTheme = savedTheme;
-    }
-} catch (error) {
-    console.error('Error accessing localStorage:', error);
-}
-html.setAttribute('data-theme', currentTheme);
 
 themeToggle.addEventListener('click', () => {
     try {
         const theme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         html.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
-        
+
         // Update ARIA label
         const isDark = theme === 'dark';
         themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
         themeToggle.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+
+        // Track theme toggle
+        sendGAEvent('theme_toggle', {
+            'theme_selected': theme,
+            'event_category': 'user_preferences',
+            'event_label': theme
+        });
     } catch (error) {
         console.error('Error toggling theme:', error);
     }
@@ -56,15 +53,22 @@ hamburger.addEventListener('click', () => {
     try {
         navMenu.classList.toggle('active');
         const isActive = navMenu.classList.contains('active');
-        
+
         // Update ARIA expanded
         hamburger.setAttribute('aria-expanded', isActive);
-        
+
         // Animate hamburger
         const spans = hamburger.querySelectorAll('span');
         spans[0].style.transform = isActive ? 'rotate(45deg) translateY(8px)' : 'none';
         spans[1].style.opacity = isActive ? '0' : '1';
         spans[2].style.transform = isActive ? 'rotate(-45deg) translateY(-8px)' : 'none';
+
+        // Track mobile menu toggle
+        sendGAEvent('mobile_menu_toggle', {
+            'menu_action': isActive ? 'open' : 'close',
+            'event_category': 'navigation',
+            'event_label': isActive ? 'menu_opened' : 'menu_closed'
+        });
     } catch (error) {
         console.error('Error toggling navigation:', error);
     }
@@ -102,7 +106,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Active Navigation Link Highlighting
-const sections = document.querySelectorAll('section');
+// Only sections with an id can match a nav link. Sections without one (the
+// proof band) must not wipe the active state as they scroll past.
+const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 
 function highlightActiveSection() {
@@ -132,71 +138,48 @@ window.addEventListener('scroll', debouncedHighlight, { passive: true });
 const navbar = document.querySelector('.navbar');
 
 const handleNavbarScroll = () => {
-    const scrolled = window.scrollY > SCROLL_THRESHOLD;
-    navbar.style.boxShadow = scrolled ? '0 2px 10px var(--shadow)' : '0 2px 4px var(--shadow)';
+    navbar.classList.toggle('is-scrolled', window.scrollY > SCROLL_THRESHOLD);
 };
 
 const debouncedNavbarScroll = debounce(handleNavbarScroll, DEBOUNCE_WAIT);
 window.addEventListener('scroll', debouncedNavbarScroll, { passive: true });
 
-// Fade In Animation on Scroll
-const fadeElements = document.querySelectorAll('.timeline-item, .project-card, .contact-item');
+// Scroll Reveal
+// One mechanism for the whole page. The hidden start state lives in CSS under
+// `.js [data-reveal]`, and `.js` is only ever set by the inline head script, so
+// with JavaScript disabled nothing is hidden in the first place. If
+// IntersectionObserver is missing we simply reveal everything immediately.
+const revealElements = document.querySelectorAll('[data-reveal]');
 
-const appearOptions = {
-    threshold: 0.15,
-    rootMargin: "0px 0px -100px 0px"
+const revealOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -60px 0px'
 };
 
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            return;
-        } else {
-            entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
-            appearOnScroll.unobserve(entry.target);
-        }
-    });
-}, appearOptions);
-
-// Check if IntersectionObserver is supported
 if ('IntersectionObserver' in window) {
-    fadeElements.forEach(element => {
-        element.style.opacity = '0';
-        appearOnScroll.observe(element);
-    });
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, revealOptions);
+
+    revealElements.forEach(element => revealObserver.observe(element));
 } else {
-    // Fallback for browsers without IntersectionObserver
-    fadeElements.forEach(element => {
-        element.style.opacity = '1';
-    });
+    revealElements.forEach(element => element.classList.add('is-revealed'));
 }
 
-// Timeline Animation on Scroll - Enhanced for AOS-like behavior
-const timelineItems = document.querySelectorAll('.timeline-item[data-aos="fade-up"]');
-
-const timelineOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
-};
-
-const timelineObserver = new IntersectionObserver(function(entries, observer) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('aos-animate');
-            observer.unobserve(entry.target);
+// Self-updating tenure counters
+// The static HTML already contains a correct value (for crawlers and
+// no-JS visitors) - this just keeps it accurate as years pass.
+function updateYearCounts() {
+    document.querySelectorAll('.js-years').forEach(el => {
+        const since = parseInt(el.getAttribute('data-since'), 10);
+        if (!isNaN(since)) {
+            el.textContent = new Date().getFullYear() - since;
         }
-    });
-}, timelineOptions);
-
-// Apply observer to timeline items
-if ('IntersectionObserver' in window) {
-    timelineItems.forEach(item => {
-        timelineObserver.observe(item);
-    });
-} else {
-    // Fallback - show all items
-    timelineItems.forEach(item => {
-        item.classList.add('aos-animate');
     });
 }
 
@@ -204,6 +187,7 @@ if ('IntersectionObserver' in window) {
 document.addEventListener('DOMContentLoaded', () => {
     highlightActiveSection();
     handleNavbarScroll();
+    updateYearCounts();
 });
 
 // Google Analytics Event Tracking
@@ -226,26 +210,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// Track theme toggle
-themeToggle.addEventListener('click', () => {
-    const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    sendGAEvent('theme_toggle', {
-        'theme_selected': newTheme,
-        'event_category': 'user_preferences',
-        'event_label': newTheme
-    });
-});
-
-// Track mobile menu toggle
-hamburger.addEventListener('click', () => {
-    const isOpening = !navMenu.classList.contains('active');
-    sendGAEvent('mobile_menu_toggle', {
-        'menu_action': isOpening ? 'open' : 'close',
-        'event_category': 'navigation',
-        'event_label': isOpening ? 'menu_opened' : 'menu_closed'
-    });
-});
-
 // Track external links
 document.querySelectorAll('a[target="_blank"]').forEach(link => {
     link.addEventListener('click', function() {
@@ -262,6 +226,8 @@ document.querySelectorAll('a[target="_blank"]').forEach(link => {
             linkType = 'octfolio';
         } else if (url.includes('meetnomics.com')) {
             linkType = 'meetnomics';
+        } else if (url.includes('asbestoslist.com')) {
+            linkType = 'asbestoslist';
         }
         
         sendGAEvent('external_link_click', {

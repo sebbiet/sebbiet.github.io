@@ -12,6 +12,7 @@ A clean, professional personal website showcasing my experience in technology le
 - **⚡ Performance Optimized**: Minimal dependencies, optimized images, and efficient code
 - **🔒 Secure**: Implements CSP headers and security best practices
 - **🎨 Coastal Theme**: Professional blue color palette inspired by Australian coastal aesthetics
+- **✍️ Writing**: Built but NOT launched. Pages exist at `writing/`, unlinked, noindex'd, excluded from the sitemap and disallowed in robots.txt until the "How I work" article is finished.
 
 ## Project Structure
 
@@ -20,8 +21,23 @@ sebastiantiller/
 ├── index.html          # Main HTML file
 ├── styles.css          # All styling (with CSS variables for theming)
 ├── script.js           # JavaScript for interactivity
+├── robots.txt          # Search engine crawl rules
+├── sitemap.xml         # XML sitemap
+├── .gitignore          # Ignored files (OS cruft, editor folders, logs)
+├── writing/            # Long-form writing - BUILT BUT HIDDEN, not yet launched
+├── tools/              # Build tools (OG image template), not site pages
+│   ├── index.html      # Listing page for posts
+│   └── how-i-work/
+│       └── index.html  # "How I work" (currently a draft)
+├── fonts/              # Self-hosted variable woff2 (CSP sets font-src 'self')
+│   ├── space-grotesk-latin[-ext].woff2
+│   ├── geist-latin[-ext].woff2
+│   └── OFL.txt
 ├── imgs/               # Images directory
-│   └── Seb.png        # Profile image
+│   ├── Seb.png                       # Profile image (source, 1024x1024)
+│   ├── seb-400.png                   # Optimised profile image (fallback)
+│   ├── seb-400.webp                  # Optimised profile image (WebP)
+│   └── sebastian-tiller-og-banner.png  # Open Graph / social share image
 ├── docs/               # Documents directory
 │   └── Sebastian Tiller - Resume - 2022.pdf
 ├── CLAUDE.md          # Documentation for AI assistants
@@ -33,7 +49,8 @@ sebastiantiller/
 - **HTML5**: Semantic markup with structured data for SEO
 - **CSS3**: Modern CSS with custom properties, Grid, and Flexbox
 - **Vanilla JavaScript**: No framework dependencies for maximum performance
-- **Progressive Enhancement**: Works without JavaScript, enhanced with it
+- **Self-hosted typography**: Space Grotesk (display) and Geist (text), variable woff2 in `fonts/`. The page CSP sets `font-src 'self'`, so a Google Fonts `<link>` would be blocked silently
+- **Progressive enhancement**: scroll reveals are gated on the `js` class that the inline head script adds, so every section, including all five timeline entries, renders with JavaScript disabled
 
 ## Color Palette
 
@@ -45,6 +62,7 @@ The website uses a carefully selected coastal-inspired color scheme:
 | Deep Navy | `#233775` | Primary accent, headings |
 | Classic Denim | `#45649C` | Secondary accent, links |
 | Dusty Cornflower | `#667DA6` | Tertiary accent |
+| Deep Accent | `#0F2C68` | Additional accent (`--accent-light`) |
 | Dark Background | `#1a1a1a` | Dark mode background |
 
 ## Development
@@ -72,6 +90,10 @@ The website uses a carefully selected coastal-inspired color scheme:
    ```
 
 3. Visit `http://localhost:8000` in your browser
+
+   Serve the site rather than opening `index.html` from the filesystem. The
+   `writing/` pages use clean URLs and root-relative asset paths, so they only
+   resolve when something is serving the folder as a site root.
 
 ### Making Changes
 
