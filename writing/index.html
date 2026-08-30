@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <title>Writing - Sebastian Tiller</title>
+
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="description" content="Notes from Sebastian Tiller on enterprise software, remote teams and the unglamorous habits that keep them working.">
+    <meta name="author" content="Sebastian Tiller">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sebastiantiller.com/writing/">
+    <meta property="og:title" content="Writing - Sebastian Tiller">
+    <meta property="og:description" content="Notes from Sebastian Tiller on enterprise software, remote teams and the unglamorous habits that keep them working.">
+    <meta property="og:image" content="https://www.sebastiantiller.com/imgs/sebastian-tiller-og-banner.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Sebastian Tiller - Use your skills to bring joy">
+    <meta property="og:locale" content="en_AU">
+
+    <!-- X (Twitter) -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.sebastiantiller.com/writing/">
+    <meta property="twitter:title" content="Writing - Sebastian Tiller">
+    <meta property="twitter:description" content="Notes from Sebastian Tiller on enterprise software, remote teams and the unglamorous habits that keep them working.">
+    <meta property="twitter:image" content="https://www.sebastiantiller.com/imgs/sebastian-tiller-og-banner.png">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/space-grotesk-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/geist-latin.woff2" crossorigin>
+
+    <!-- Colour scheme support -->
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Theme initialisation. Identical to the homepage, and it has to be:
+         it runs before the stylesheet so the saved theme is applied without a
+         flash, and it sets the `js` class the reveal animations are gated on. -->
+    <script>
+      (function () {
+        document.documentElement.classList.add('js');
+        try {
+          var savedTheme = localStorage.getItem('theme');
+          var theme;
+          if (savedTheme === 'dark' || savedTheme === 'light') {
+            theme = savedTheme;
+          } else {
+            theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (error) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+
+    <link rel="stylesheet" href="/styles.css">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.sebastiantiller.com/writing/">
+
+    <!-- Emoji Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Writing - Sebastian Tiller",
+        "url": "https://www.sebastiantiller.com/writing/",
+        "description": "Notes from Sebastian Tiller on enterprise software, remote teams and the unglamorous habits that keep them working.",
+        "author": {
+            "@type": "Person",
+            "name": "Sebastian Tiller",
+            "url": "https://www.sebastiantiller.com/"
+        },
+        "blogPost": [
+            {
+                "@type": "BlogPosting",
+                "headline": "How I work",
+                "url": "https://www.sebastiantiller.com/writing/how-i-work/",
+                "datePublished": "2026-08-30",
+                "author": {
+                    "@type": "Person",
+                    "name": "Sebastian Tiller"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3JDFV7PDCG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3JDFV7PDCG');
+    </script>
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation. Same markup as the homepage, because script.js queries
+         .theme-toggle, .hamburger and .nav-menu without checking they exist.
+         The section links are root-relative so they land on the homepage. -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="nav-brand">Sebastian Tiller</a>
+            <ul class="nav-menu" id="primary-navigation">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/#about" class="nav-link">About</a></li>
+                <li><a href="/#advisory" class="nav-link">Advisory</a></li>
+                <li><a href="/#experience" class="nav-link">Experience</a></li>
+                <li><a href="/#projects" class="nav-link">Projects</a></li>
+                <li><a href="/writing/" class="nav-link active" aria-current="page">Writing</a></li>
+                <li><a href="/#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <div class="page">
+            <div class="container">
+                <header class="page__head">
+                    <h1 class="page__title">Writing</h1>
+                    <p class="page__lede">Occasional notes on enterprise software, remote teams, and the unglamorous habits that keep both of them working.</p>
+                </header>
+
+                <div class="post-column">
+                    <ol class="post-list">
+                        <li class="post" data-reveal>
+                            <p class="post__meta">
+                                <span>Draft</span>
+                                <span>August 2026</span>
+                                <span>5 min read</span>
+                            </p>
+                            <h2 class="post__title"><a href="/writing/how-i-work/">How I work</a></h2>
+                            <p class="post__standfirst">A README for working with me: what I will back you on, what I will push back on, and the four things I care about enough to be repetitive about.</p>
+                            <p><a href="/writing/how-i-work/" class="link-out">Read it</a></p>
+                        </li>
+                    </ol>
+
+                    <p class="post-note">One piece so far, and it is still a draft. If you would rather not wait for the next one, <a href="https://www.linkedin.com/in/sebastiantiller" target="_blank" rel="noopener noreferrer">LinkedIn</a> is where I turn up most often.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p>&copy; <abbr title="Yes, 1984. It's a birth year, not a typo.">1984</abbr> Sebastian Tiller. All rights reserved. | Built with passion for great teams.</p>
+            <p class="disclaimer">Opinions expressed are my own and do not reflect the views of my employer.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>

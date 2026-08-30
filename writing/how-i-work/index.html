@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <title>How I work - Sebastian Tiller</title>
+
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="description" content="A README for working with Sebastian Tiller: people over process, elegant solutions, remote-first since 2016, and family time that stays sacred.">
+    <meta name="author" content="Sebastian Tiller">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.sebastiantiller.com/writing/how-i-work/">
+    <meta property="og:title" content="How I work - Sebastian Tiller">
+    <meta property="og:description" content="A README for working with Sebastian Tiller: people over process, elegant solutions, remote-first since 2016, and family time that stays sacred.">
+    <meta property="og:image" content="https://www.sebastiantiller.com/imgs/sebastian-tiller-og-banner.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Sebastian Tiller - Use your skills to bring joy">
+    <meta property="og:locale" content="en_AU">
+    <meta property="article:author" content="https://www.linkedin.com/in/sebastiantiller">
+    <meta property="article:published_time" content="2026-08-30">
+
+    <!-- X (Twitter) -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.sebastiantiller.com/writing/how-i-work/">
+    <meta property="twitter:title" content="How I work - Sebastian Tiller">
+    <meta property="twitter:description" content="A README for working with Sebastian Tiller: people over process, elegant solutions, remote-first since 2016, and family time that stays sacred.">
+    <meta property="twitter:image" content="https://www.sebastiantiller.com/imgs/sebastian-tiller-og-banner.png">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/space-grotesk-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/geist-latin.woff2" crossorigin>
+
+    <!-- Colour scheme support -->
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Theme initialisation. Identical to the homepage, and it has to be:
+         it runs before the stylesheet so the saved theme is applied without a
+         flash, and it sets the `js` class the reveal animations are gated on. -->
+    <script>
+      (function () {
+        document.documentElement.classList.add('js');
+        try {
+          var savedTheme = localStorage.getItem('theme');
+          var theme;
+          if (savedTheme === 'dark' || savedTheme === 'light') {
+            theme = savedTheme;
+          } else {
+            theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (error) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+
+    <link rel="stylesheet" href="/styles.css">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.sebastiantiller.com/writing/how-i-work/">
+
+    <!-- Emoji Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How I work",
+        "description": "A README for working with Sebastian Tiller: people over process, elegant solutions, remote-first since 2016, and family time that stays sacred.",
+        "url": "https://www.sebastiantiller.com/writing/how-i-work/",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.sebastiantiller.com/writing/how-i-work/"
+        },
+        "datePublished": "2026-08-30",
+        "dateModified": "2026-08-30",
+        "image": "https://www.sebastiantiller.com/imgs/sebastian-tiller-og-banner.png",
+        "author": {
+            "@type": "Person",
+            "name": "Sebastian Tiller",
+            "url": "https://www.sebastiantiller.com/"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Sebastian Tiller",
+            "url": "https://www.sebastiantiller.com/"
+        },
+        "isPartOf": {
+            "@type": "Blog",
+            "name": "Writing - Sebastian Tiller",
+            "url": "https://www.sebastiantiller.com/writing/"
+        }
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3JDFV7PDCG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3JDFV7PDCG');
+    </script>
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation. Same markup as the homepage, because script.js queries
+         .theme-toggle, .hamburger and .nav-menu without checking they exist.
+         The section links are root-relative so they land on the homepage. -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="/" class="nav-brand">Sebastian Tiller</a>
+            <ul class="nav-menu" id="primary-navigation">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/#about" class="nav-link">About</a></li>
+                <li><a href="/#advisory" class="nav-link">Advisory</a></li>
+                <li><a href="/#experience" class="nav-link">Experience</a></li>
+                <li><a href="/#projects" class="nav-link">Projects</a></li>
+                <li><a href="/writing/" class="nav-link active">Writing</a></li>
+                <li><a href="/#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <article class="article">
+            <div class="container">
+                <div class="article__inner">
+
+                    <!-- SEB: delete this whole notice once you are happy with the
+                         piece. It is the only thing telling readers not to take
+                         the gaps below as finished writing. -->
+                    <aside class="notice" aria-label="Status of this article">
+                        <p class="notice__label">Draft</p>
+                        <p>This one is still a work in progress. I have written the parts I am sure about and left the rest blank rather than make something up, and the gaps are listed at the bottom. Treat it as a first pass, not a manifesto.</p>
+                    </aside>
+
+                    <header class="article__head">
+                        <p class="page__kicker article__kicker"><a href="/writing/">Writing</a></p>
+                        <h1 class="article__title">How I work</h1>
+                        <p class="article__standfirst">A README for working with me: what I will back you on, what I will push back on, and the four things I care about enough to be repetitive about.</p>
+                        <p class="article__meta">
+                            <span>Sebastian Tiller</span>
+                            <span>August 2026</span>
+                            <span>5 min read</span>
+                        </p>
+                    </header>
+
+                    <div class="prose">
+                        <p>If we end up working together, on my team, as a client, as a partner, or over a coffee where you want an opinion, you will work out my habits eventually. This is an attempt to save you the six months.</p>
+
+                        <p>I have spent <span class="js-years" data-since="2009">17</span> years arguing that enterprise software should not be clunky, confusing, and designed by someone who clearly never has to use it. It seemed only fair to hold the way I work to the same standard. So: the manual. It is a bit dry in places. So am I.</p>
+
+                        <h2>The short version</h2>
+                        <ul>
+                            <li>I will back the person before I back the process. When the two are in conflict, the process is where I start looking.</li>
+                            <li>The simplest thing that actually works beats the clever thing. <strong>Actually works</strong> is doing a lot of the lifting in that sentence.</li>
+                            <li>I have run remote teams since 2016. Distributed is the default here, not a concession.</li>
+                            <li>Family time is sacred. Mine, and yours.</li>
+                            <li>The measure I actually care about is whether the team enjoys Monday mornings.</li>
+                        </ul>
+
+                        <h2>People over process</h2>
+                        <blockquote>
+                            <p>Great teams build great products, not the other way around.</p>
+                        </blockquote>
+                        <p>That is one of the four things I have written on the front of my own website, so you are entitled to hold me to it. In practice it means that when a process and a person are in conflict, my first assumption is that the process is wrong. I am not always right about that. It is still the right place to start looking.</p>
+                        <p>None of which makes me anti-process. I sell process for a living. Octfolio is compliance software for councils, schools, utilities and mining companies, which is to say it is process wearing a login screen. That is exactly why I am careful with it. I have seen what a process looks like when it is designed by someone who never has to live inside it, and I would rather not do that to my own team.</p>
+                        <p>So if something we do internally is making your week worse and it is not protecting anyone, say so. That is not a complaint. That is a bug report.</p>
+                        <!-- SEB: fill in - how you actually run one-to-ones. Cadence, who owns the agenda, what the time is for. This is the first thing anyone joining your team will want to know, and the most obvious hole in the document as it stands. -->
+                        <!-- SEB: fill in - how you give feedback and how you want to receive it. In the moment or saved up? Written or out loud? Do you do formal reviews at all? -->
+
+                        <h2>Elegant solutions</h2>
+                        <blockquote>
+                            <p>The best answer is usually the simplest one that actually works.</p>
+                        </blockquote>
+                        <p>Seven years at Theta taught me that even the most complex business problems can have elegant solutions. It also taught me that the simplest solution which does not work is just a quicker way to be wrong, which is why the second half of that sentence is the half that matters.</p>
+                        <p>Expect me to ask what happens if we do less. It is not a trick and it is not a budget conversation, it is genuinely the question I find most useful. Half the time the answer is that we cannot, and we have lost ten minutes. The other half, we have avoided building something nobody needed.</p>
+                        <p>I came to this sideways. A Bachelor of Interactive Entertainment majoring in animation and special effects, then game QA, then running a photo centre, and then, somehow, solutions architecture. None of it was a plan. What it left me with is a very low tolerance for software that needs a training course before anyone can use it, and a habit of asking who has to hold this thing at six in the morning in the rain.</p>
+                        <!-- SEB: fill in - how technical decisions actually get made. Who decides, when you weigh in, and what you want to see before you say yes to something expensive. -->
+                        <!-- SEB: fill in - what a good proposal or pitch looks like to you. One page? A prototype? Numbers first? People will guess otherwise. -->
+
+                        <h2>Remote-first</h2>
+                        <blockquote>
+                            <p>Talent is everywhere, so why limit yourself to one postcode?</p>
+                        </blockquote>
+                        <p>We have been remote since 2016, well before it was fashionable and a good while before the tooling was any good. So I have no romance about it. Remote is not free, it just moves the cost. The friction you would have burned off in a corridor has to be paid for deliberately somewhere else.</p>
+                        <p>The three things that have mattered most are hiring, handover, and the unglamorous habits in between. Hiring, because a distributed team amplifies whoever you let into it. Handover, because work that only exists in one person's head is a single point of failure with a mortgage. The habits, because they are the part everybody skips and then wonders why the whole thing feels harder than it should.</p>
+                        <!-- SEB: fill in - the habits themselves. Meeting cadence, what gets written down versus said out loud, which tool is for what, and what response time you expect on each. This is the section people will screenshot, so it is worth the twenty minutes. -->
+                        <!-- SEB: fill in - working hours and overlap. Are there core hours? How wide a timezone spread will you actually hire across? -->
+                        <!-- SEB: fill in - how you hire. The stages, what you screen for, whether there is a take-home and what it looks like. -->
+                        <!-- SEB: fill in - onboarding. What genuinely happens in someone's first week and first month. -->
+
+                        <h2>Family time is sacred</h2>
+                        <blockquote>
+                            <p>No one remembers how late you worked, except your family.</p>
+                        </blockquote>
+                        <p>I have built an app whose entire purpose is to stop my kids asking whether we are there yet, which should tell you roughly how my weekends go.</p>
+                        <p>The value cuts both ways, and the second direction is the one that counts. If I am offline, I am offline, and I would like you to be too. A team quietly burning its evenings is not a high-performing team, it is a team with a bill that has not arrived yet.</p>
+                        <!-- SEB: fill in - the specifics, plainly. Do you send messages after hours? If you do, do you expect a reply? Say it out loud, because people copy what you do rather than what you say. -->
+                        <!-- SEB: fill in - what happens when something genuinely is on fire outside hours. What the escalation or on-call expectation actually is, and who carries it. -->
+
+                        <h2>I will tell you where my interests lie</h2>
+                        <p>I run <a href="https://asbestoslist.com/" target="_blank" rel="noopener noreferrer">AsbestosList</a>, an independent directory of licensed asbestos professionals across Australia and New Zealand. One of its categories is asbestos management software, which happens to be exactly what Octfolio sells. Competitors are listed too, which is rather the point of calling it independent, and the disclosure sits on the page rather than in a footer where nobody reads it.</p>
+                        <p>The same applies to anything I tell you. If I have a stake in the advice, you will hear it from me before you have to ask.</p>
+
+                        <h2>Still to write</h2>
+                        <p>This is a draft, and rather than invent an answer I have left the holes where you can see them. What this document still owes you:</p>
+                        <ul>
+                            <li>How I run one-to-ones, and what the time is actually for.</li>
+                            <li>How I give feedback, and how I would like to get it.</li>
+                            <li>The real meeting cadence, and what gets written down instead of discussed.</li>
+                            <li>Working hours, overlap, and what I do and do not expect after hours.</li>
+                            <li>How I hire, and what a first month looks like.</li>
+                            <li>How decisions get made when we disagree.</li>
+                        </ul>
+                        <p>If you have worked with me and think I have described someone else, that is useful information and I would like to hear it.</p>
+                        <!-- SEB: every item in this list is a genuine gap, and each one has a matching comment in the section it belongs to. Once they are filled in, delete this section and the draft notice at the top of the page. -->
+                    </div>
+
+                    <div class="article__foot">
+                        <a href="/writing/" class="link-back">All writing</a>
+                        <a href="/#contact" class="btn btn-primary">Get in touch</a>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p>&copy; <abbr title="Yes, 1984. It's a birth year, not a typo.">1984</abbr> Sebastian Tiller. All rights reserved. | Built with passion for great teams.</p>
+            <p class="disclaimer">Opinions expressed are my own and do not reflect the views of my employer.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
