@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
 
-# Writing section is built but not launched yet. Remove this Disallow (and the
-# noindex tags on the two pages) when it goes live.
-Disallow: /writing/
-
 Sitemap: https://www.sebastiantiller.com/sitemap.xml

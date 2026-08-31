@@ -53,6 +53,51 @@ The personal website includes:
   writing section of index.html
 - **Contact**: Links to LinkedIn and X (Twitter)
 
+## Adding a new article
+
+There is no build step, so adding an article is a manual, seven-step job. Miss a
+step and the site is quietly inconsistent rather than broken, so work the list.
+
+1. `mkdir writing/<slug>/` and copy `writing/how-i-work/index.html` as the
+   starting point.
+2. In the copy, update: `<title>`, `<meta name="description">`, canonical URL,
+   all og/twitter tags, the `<h1>`, standfirst, date and read time.
+3. Write the article inside `<div class="prose">`. Use the existing heading and
+   blockquote patterns - `.prose h2` auto-numbers via a CSS counter.
+4. Add an entry to the list in `writing/index.html`.
+5. Add an entry to the `#writing` band in `index.html` (the homepage shows the
+   most recent piece only).
+6. Update the `.post-note` copy in BOTH `writing/index.html` and `index.html`.
+   It currently says "One piece so far", which stops being true at article two.
+7. Add the URL to `sitemap.xml`.
+
+### The duplication problem
+
+Every page carries its own copy of the `<head>` (CSP, meta, OG, canonical,
+theme-init script, font preloads), the full navbar, and the footer. That is
+roughly 70 lines duplicated per page. Consequences:
+
+- Changing a nav item means editing every page, not one.
+- The theme-init script MUST be present in `<head>` on every page or that page
+  flashes the wrong theme and ignores the saved preference.
+- The full navbar markup MUST be present, because `script.js` queries
+  `.theme-toggle`, `.hamburger` and `.nav-menu` without guarding for null.
+
+This is fine at two or three articles. It gets genuinely annoying past that.
+
+### When it stops being fine
+
+GitHub Pages runs Jekyll natively, and this repo has no `.nojekyll` file, so
+Jekyll is already available at zero setup cost. Moving to it would mean layouts
+and includes for the shared head/nav/footer, a `_posts` collection, and an
+auto-generated listing page and sitemap - collapsing the seven steps above to
+"write a Markdown file with front matter".
+
+The trade-off is real: front matter and templating replace plain HTML files, and
+previewing changes locally would need Ruby and `bundle exec jekyll serve` rather
+than just opening the file. Worth it somewhere around the fourth or fifth
+article; not worth it before then.
+
 ## Development Notes
 
 ### Tech Stack
